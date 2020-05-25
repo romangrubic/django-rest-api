@@ -6,11 +6,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'url', 'username', 'email', 'groups']
-        read_only_Fields = ('id', 'url', 'username', 'email', 'groups')
+        read_only_Fields = ('id', 'url',)
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['id', 'url', 'name']
-        read_only_Fields = ('id', 'url', 'name')
+        read_only_Fields = ('id', 'url',)
