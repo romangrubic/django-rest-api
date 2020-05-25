@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from .serializers import UserSerializer, GroupSerializer
-
+import requests
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -17,3 +17,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+
+# # Make a get request to get the latest position of the international space station from the opennotify api.
+# response = requests.get("https://django-api-romangrubic.herokuapp.com/users/1")
+# # Print the status code of the response.
+# data = response.json()
+# print(type(data))
+# print(data)
