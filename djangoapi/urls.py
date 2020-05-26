@@ -21,6 +21,8 @@ from djangoapi.api import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'python', views.PythonViewSet)
+router.register(r'javascript', views.JavaScriptViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
+from .models import Python, JavaScript
 from rest_framework import viewsets, permissions
-from .serializers import UserSerializer, GroupSerializer
+from .serializers import UserSerializer, GroupSerializer, PythonSerializer, JavaScriptSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,6 +21,23 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = GroupSerializer
 
+
+class PythonViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows only GET request for Python
+    """
+    queryset = Python.objects.all()
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = PythonSerializer
+
+
+class JavaScriptViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows only GET for JavaScript
+    """
+    queryset = JavaScript.objects.all()
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = JavaScriptSerializer
 
 # # Make a get request to get the latest position of the international space station from the opennotify api.
 # response = requests.get("https://django-api-romangrubic.herokuapp.com/users/1")
