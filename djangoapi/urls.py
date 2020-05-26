@@ -27,7 +27,7 @@ router.register(r'javascript', views.JavaScriptViewSet)
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^documentation/', documentation, name='documentation'),
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
