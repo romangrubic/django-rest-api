@@ -7,56 +7,129 @@
 		<div class="col-md-8 main-content">
 			<h1>Documentation</h1>
 			<hr>
-            <h2 id="index">Index:</h2>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-            </ul>
-            <hr>
+			<h2 id="index">Index:</h2>
+			<ul>
+				<li><a href="#introduction">Introduction</a></li>
+				<li><a href="#getting-started">Getting started</a></li>
+				<li><a href="#base-url">Base URL</a></li>
+				<li><a href="#get-all">Get all Q&A for X</a></li>
+				<li><a href="#q-a-schema">Q&A Schema</a></li>
+				<li><a href="#authentication">Authentication</a></li>
+			</ul>
+			<hr>
 			<h2 id="introduction">Introduction</h2>
 			<p>Welcome to the Q&A, questions and answers for programming! This documentation should help you
 				familiarise yourself with the resources available and how to consume them with HTTP requests. Read
 				through the
 				getting started section before you dive in. Most of your problems should be solved just by reading
 				through it.</p>
-                <div class="text-right">
-                <a href="#index" class="back-to-top">Back to top!</a>
-                </div>
+			<div class="text-right">
+				<a href="#index" class="back-to-top">Back to top!</a>
+			</div>
 			<hr>
-			<h2>Getting started</h2>
+			<h2 id="getting-started">Getting started</h2>
 			<p>Let's make our first API request to the Q&A API!
 				Open up a terminal and use curl or httpie to make an API request for a resource. In the example below,
 				we're trying to get
 				the first question about Python:</p>
-			<p class="request"><span class="text-white">http django-api-romangrubic.herokuapp.com/api/python/1/</span></p>
+			<p class="request"><span class="text-white">http django-api-romangrubic.herokuapp.com/api/python/1/</span>
+			</p>
 			<p>You should be getting something like this:</p>
 			<p class="request-json">{<br>
-    <span class="text-red">"id"</span>: <span class="text-green">1</span>,<br>
-<span class="text-red">"url"</span>: <span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/python/1/"</span>,<br>
-<span class="text-red">"question"</span>: <span class="text-green">"What is Python?"</span>,<br>
-<span class="text-red">"answer"</span>: <span class="text-green">"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991."</span>,<br>
-<span class="text-red">"link"</span>: <span class="text-green">"https://www.python.org/"</span>,<br>
-<span class="text-red">"question_created"</span>: <span class="text-green">"2020-05-26T11:48:20Z"</span><br>
+				<span class="text-red">"id"</span>: <span class="text-green">1</span>,<br>
+				<span class="text-red">"url"</span>:
+				<span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/python/1/"</span>,<br>
+				<span class="text-red">"question"</span>: <span class="text-green">"What is Python?"</span>,<br>
+				<span class="text-red">"answer"</span>:
+				<span class="text-green">"Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991."</span>,<br>
+				<span class="text-red">"link"</span>: <span class="text-green">"https://www.python.org/"</span>,<br>
+				<span class="text-red">"question_created"</span>:
+				<span class="text-green">"2020-05-26T11:48:20Z"</span><br>
 }</p>
-<p>If your response looks slightly different don't panic. This is probably because more data has been added to Q&A API since I made this documentation</p>
-<hr>
-<h2>Base URL</h2>
-<p>The Base URL is the root URL for all of the API, if you ever make a request to Q&A API and you get back a 404 NOT FOUND response then check the Base URL first.
-<br>
-<br>
+				<p>If your response looks slightly different don't panic. This is probably because more data has been
+					added to Q&A API since I made this documentation</p>
+				<div class="text-right">
+					<a href="#index" class="back-to-top">Back to top!</a>
+				</div>
+				<hr>
+				<h2 id="base-url">Base URL</h2>
+				<p>The Base URL is the root URL for all of the API, if you ever make a request to Q&A API and you get
+					back a 404 NOT FOUND response then check the Base URL first.
+					<br>
+					<br>
 The Base URL for Q&A API is:</p><span class="text-white"></span>
-<p class="request"><span class="text-white">https://django-api-romangrubic.herokuapp.com/api/</span></p>
-<p>It should return something like this:</p>
-<p class="request-json">
-{<br>
-<span class="text-red">"python"</span>: <span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/python/"</span>,<br>
-<span class="text-red">"javascript"</span>: <span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/javascript/"</span><br>
+					<p class="request"><span class="text-white">https://django-api-romangrubic.herokuapp.com/api/</span>
+					</p>
+					<p>It should return something like this:</p>
+					<p class="request-json">
+						{<br>
+						<span class="text-red">"python"</span>:
+						<span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/python/"</span>,<br>
+						<span class="text-red">"javascript"</span>:
+						<span class="text-green">"https://django-api-romangrubic.herokuapp.com/api/javascript/"</span><br>
 }
 </p>
-<hr>
-<h2>Authentication</h2>
-<p>Q&A API is a completely open API. No authentication is required to query and get data. This also means that we've limited what you can 
-do to just GET-ing the data. If you find a mistake in the data, feel free to message me.</p>
-<hr>
+						<p>At the moment, only Python and JavaScript are available, but will expand soon!</p>
+						<div class="text-right">
+							<a href="#index" class="back-to-top">Back to top!</a>
+						</div>
+						<hr>
+                        <h2 id="get-all">Get all Q&A for X </h2>
+                        <hr>
+						<h2 id="q-a-schema">Q&A Schema</h2>
+                        <p>Schema of the Q&A. It is same for all Q&A's in database for simplicity.</p>
+						<p>
+							<table>
+								<tr>
+									<th>Key</th>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>id</td>
+									<td>integer</td>
+									<td>The id of the Q&A</td>
+								</tr>
+                                <tr>
+									<td>url</td>
+									<td>URL link</td>
+									<td>The url of the Q&A</td>
+								</tr>
+                                <tr>
+									<td>question</td>
+									<td>string</td>
+									<td>Question for the Q&A</td>
+								</tr>
+                                <tr>
+									<td>answer</td>
+									<td>textfield</td>
+									<td>Answer for the Q&A</td>
+								</tr>
+                                <tr>
+									<td>link</td>
+									<td>URL link</td>
+									<td>URL link of the answer</td>
+								</tr>
+                                <tr>
+									<td>question_created</td>
+									<td>Date/Time field</td>
+									<td>Shows when the question was added to database</td>
+								</tr>
+							</table>
+						</p>
+                        <div class="text-right">
+							<a href="#index" class="back-to-top">Back to top!</a>
+						</div>
+                        <hr>
+                        <h2 id="authentication">Authentication</h2>
+						<p>Q&A API is a completely open API. No authentication is required to query and get data. This
+							also means that we've limited what you can
+							do to just GET-ing the data. If you find a mistake in the data, feel free to message me.</p>
+						<div class="text-right">
+							<a href="#index" class="back-to-top">Back to top!</a>
+						</div>
+						<hr>
+
 		</div>
 		<div class="col-md-2"></div>
 	</div>
