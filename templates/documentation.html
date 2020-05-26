@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-8 main-content">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8 main-content">
 			<h1>Documentation</h1>
 			<hr>
 			<h2 id="index">Index:</h2>
@@ -74,64 +74,99 @@ The Base URL for Q&A API is:</p><span class="text-white"></span>
 							<a href="#index" class="back-to-top">Back to top!</a>
 						</div>
 						<hr>
-                        <h2 id="get-all">Get all Q&A for X </h2>
-                        <hr>
-						<h2 id="q-a-schema">Q&A Schema</h2>
-                        <p>Schema of the Q&A. It is same for all Q&A's in database for simplicity.</p>
-						<p>
-							<table>
-								<tr>
-									<th>Key</th>
-									<th>Type</th>
-									<th>Description</th>
-								</tr>
-								<tr>
-									<td>id</td>
-									<td>integer</td>
-									<td>The id of the Q&A</td>
-								</tr>
-                                <tr>
-									<td>url</td>
-									<td>URL link</td>
-									<td>The url of the Q&A</td>
-								</tr>
-                                <tr>
-									<td>question</td>
-									<td>string</td>
-									<td>Question for the Q&A</td>
-								</tr>
-                                <tr>
-									<td>answer</td>
-									<td>textfield</td>
-									<td>Answer for the Q&A</td>
-								</tr>
-                                <tr>
-									<td>link</td>
-									<td>URL link</td>
-									<td>URL link of the answer</td>
-								</tr>
-                                <tr>
-									<td>question_created</td>
-									<td>Date/Time field</td>
-									<td>Shows when the question was added to database</td>
-								</tr>
-							</table>
-						</p>
-                        <div class="text-right">
-							<a href="#index" class="back-to-top">Back to top!</a>
-						</div>
-                        <hr>
-                        <h2 id="authentication">Authentication</h2>
-						<p>Q&A API is a completely open API. No authentication is required to query and get data. This
-							also means that we've limited what you can
-							do to just GET-ing the data. If you find a mistake in the data, feel free to message me.</p>
-						<div class="text-right">
-							<a href="#index" class="back-to-top">Back to top!</a>
-						</div>
-						<hr>
+						<h2 id="get-all">Get all Q&A for X </h2>
+						<p>You want to get all questions for Python so you can loop through them and create
+							flashcards?<br><br>
+                        This will interest you.</p>
+							<p>Send a request to this url:</p>
+                            <p class="request">https://django-api-romangrubic.herokuapp.com/api/python/</p>
+                            <p>It should return something like this:</p>
+							<p class="request-json">{<br>
+								<span class="text-red">"count"</span>:<span class="text-green"> 35</span>,<br>
+								<span class="text-red">"next"</span>:<span class="text-green"> null</span>,<br>
+								<span class="text-red">"previous"</span>:<span class="text-green"> null</span>,<br>
+								<span class="text-red">"results"</span>: [<br>
+								<span class="text-indent">
+{</span><br>
+								<span class="text-red text-indent">"id"</span>:<span class="text-green"> 1</span>,<br>
+								<span class="text-red text-indent">"url"</span>:<span class="text-green">
+								"https://django-api-romangrubic.herokuapp.com/api/python/1/"</span>,<br>
+								<span class="text-red text-indent">"question"</span>:<span class="text-green"> "What is Python?"</span>,<br>
+								<span class="text-red text-indent">"answer"</span>: <span class="text-green">"Python is an interpreted,
+								high-level, general-purpose programming language. Created by Guido van Rossum and first
+								released in 1991."</span>,<br>
+								<span class="text-red text-indent">"link"</span>: <span class="text-green">"https://www.python.org/"</span>,<br>
+								<span class="text-red text-indent">"question_created"</span>: <span class="text-green">"2020-05-26T11:48:20Z"</span><br>
+								<span class="text-indent"> } ,</span><br>
+                                <span class="text-indent"> {</span><br>
+                                <span class="text-red text-indent">"id"</span>: <span class="text-green">2</span>,<br>
+                                <span class="text-indent"> ...</span><br>
+								<span class="text-indent"> ]</span><br>
+}</p>
+<p>And, next step is on you to manipulate the received data to your will.</p>
+								<div class="text-right">
+									<a href="#index" class="back-to-top">Back to top!</a>
+								</div>
+								<hr>
+                                <h2>Info and Pagination</h2>
+								<h2 id="q-a-schema">Q&A Schema</h2>
+								<p>Schema of the Q&A. It is same for all Q&A's in database for simplicity.</p>
+								<p>
+									<table>
+										<tr>
+											<th>Key</th>
+											<th>Type</th>
+											<th>Description</th>
+										</tr>
+										<tr>
+											<td>id</td>
+											<td>integer</td>
+											<td>The id of the Q&A</td>
+										</tr>
+										<tr>
+											<td>url</td>
+											<td>URL link</td>
+											<td>The url of the Q&A</td>
+										</tr>
+										<tr>
+											<td>question</td>
+											<td>string</td>
+											<td>Question for the Q&A</td>
+										</tr>
+										<tr>
+											<td>answer</td>
+											<td>textfield</td>
+											<td>Answer for the Q&A</td>
+										</tr>
+										<tr>
+											<td>link</td>
+											<td>URL link</td>
+											<td>URL link of the answer</td>
+										</tr>
+										<tr>
+											<td>question_created</td>
+											<td>Date/Time field</td>
+											<td>Shows when the question was added to database</td>
+										</tr>
+									</table>
+								</p>
+								<div class="text-right">
+									<a href="#index" class="back-to-top">Back to top!</a>
+								</div>
+								<hr>
+								<h2 id="authentication">Authentication</h2>
+								<p>Q&A API is a completely open API. No authentication is required to query and get
+									data. This
+									also means that we've limited what you can
+									do to just GET-ing the data. If you find a mistake in the data, feel free to message
+									me.</p>
+								<div class="text-right">
+									<a href="#index" class="back-to-top">Back to top!</a>
+								</div>
+								<hr>
 
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-lg-2"></div>
 	</div>
 </div>
 {% endblock %}
