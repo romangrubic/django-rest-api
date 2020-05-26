@@ -2,6 +2,7 @@ from django.contrib.auth.models import User, Group
 from .models import Python, JavaScript
 from rest_framework import viewsets, permissions
 from .serializers import UserSerializer, GroupSerializer, PythonSerializer, JavaScriptSerializer
+from django.shortcuts import render
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -39,6 +40,10 @@ class JavaScriptViewSet(viewsets.ModelViewSet):
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = JavaScriptSerializer
 
+
+def index(request):
+    """Return the index.html file"""
+    return render(request, "index.html")
 # # Make a get request to get the latest position of the international space station from the opennotify api.
 # response = requests.get("https://django-api-romangrubic.herokuapp.com/users/1")
 # # Print the status code of the response.

@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+#navbar{
+    padding: 10px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+
+}
+ul{
+    margin: auto;
+}
+body{
+    background-color: white;
+}
