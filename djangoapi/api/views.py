@@ -44,6 +44,11 @@ class JavaScriptViewSet(viewsets.ModelViewSet):
 def index(request):
     """Return the index.html file"""
     return render(request, "index.html")
+
+
+def documentation(request):
+    """Return the documentatin.html file"""
+    return render(request, "documentation.html")
 # # Make a get request to get the latest position of the international space station from the opennotify api.
 # response = requests.get("https://django-api-romangrubic.herokuapp.com/users/1")
 # # Print the status code of the response.

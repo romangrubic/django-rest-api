@@ -18,7 +18,7 @@ from django.conf.urls import url
 from django.urls import include, path
 from rest_framework import routers
 from djangoapi.api import views
-from djangoapi.api.views import index
+from djangoapi.api.views import index, documentation
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -28,6 +28,7 @@ router.register(r'javascript', views.JavaScriptViewSet)
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^documentation/', documentation, name='documentation'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}| Documentation{% endblock %}
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8 main-content">
+			<h1>Documentation</h1>
+			<hr>
+			<h2>Introduction</h2>
+			<p>Welcome to the Q&A, questions and answers for programming! This documentation should help you
+				familiarise yourself with the resources available and how to consume them with HTTP requests. Read
+				through the
+				getting started section before you dive in. Most of your problems should be solved just by reading
+				through it.</p>
+			<hr>
+			<h2>Getting started</h2>
+			<p>Let's make our first API request to the Q&A API!
+				Open up a terminal and use curl or httpie to make an API request for a resource. In the example below,
+				we're trying to get
+				the first question about Python:</p>
+			<p class="request">http django-api-romangrubic.herokuapp.com/api/python/1/</p>
+			<p>You should be getting something like this:</p>
+			<p class="request-json">{<br>
+    "id": 1,<br>
+"url": "https://django-api-romangrubic.herokuapp.com/api/python/1/",<br>
+"question": "What is Python?",<br>
+"answer": "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991.",<br>
+"link": "https://www.python.org/",<br>
+"question_created": "2020-05-26T11:48:20Z"<br>
+}</p>
+<p>If your response looks slightly different don't panic. This is probably because more data has been added to Q&A API since I made this documentation</p>
+<hr>
+<h2>Base URL</h2>
+<p>The Base URL is the root URL for all of the API, if you ever make a request to Q&A API and you get back a 404 NOT FOUND response then check the Base URL first.
+<br>
+<br>
+The Base URL for Q&A API is:</p>
+<p class="request">https://django-api-romangrubic.herokuapp.com/api/</p>
+<hr>
+<h2>Authentication</h2>
+<p>Q&A API is a completely open API. No authentication is required to query and get data. This also means that we've limited what you can 
+do to just GET-ing the data. If you find a mistake in the data, feel free to message me.</p>
+<hr>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>
+{% endblock %}
