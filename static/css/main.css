@@ -2,6 +2,9 @@
     margin:0;
     box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 #navbar{
     padding: 10px;
     background-color: #ccc;
@@ -13,6 +16,7 @@ ul{
 }
 body{
     background-color: white;
+    
 }
 .jumbotron{
     background-color: white;
@@ -32,14 +36,35 @@ body{
     padding-top: 35px;
     padding-bottom: 150px;
 }
+.main-content > h2 {
+    margin: 15px 0;
+}
 .request{
-    padding: 15px;
+    padding: 25px;
     text-align: center;
-    background-color: rgb(221, 220, 220);
+    color: white;
+    background-color: rgba(2, 0, 34, 0.95);
     border-radius: 10px;
+    margin:25px 0;
 }
 .request-json{
     padding: 35px;
-    background-color: rgb(221, 220, 220);
+    background-color: rgb(2, 0, 34, 0.95);
+    color: white;
     border-radius: 10px;
+    margin: 25px 0;
+}
+.text-red{
+    padding: 0 5px 0 15px;
+    color: red;
+}
+.text-green{
+    padding: 0 5px;
+    color: rgba(72, 192, 72, 0.842)
+}
+.main-content > ul > li > a:hover{
+    text-decoration: none;
+}
+.back-to-top:hover{
+    text-decoration: none;
 }
