@@ -1,7 +1,6 @@
-from django.contrib.auth.models import User, Group
-from .models import Python, JavaScript
+from .models import Python, JavaScript, HTML
 from rest_framework import viewsets, permissions
-from .serializers import  PythonSerializer, JavaScriptSerializer
+from .serializers import  PythonSerializer, JavaScriptSerializer, HTMLSerializer
 from django.shortcuts import render
 
 
@@ -21,6 +20,15 @@ class JavaScriptViewSet(viewsets.ModelViewSet):
     queryset = JavaScript.objects.all()
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = JavaScriptSerializer
+
+
+class HTMLViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows only GET for HTML
+    """
+    queryset = HTML.objects.all()
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = HTMLSerializer
 
 
 def index(request):
