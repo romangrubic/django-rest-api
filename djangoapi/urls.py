@@ -24,6 +24,7 @@ router = routers.DefaultRouter()
 router.register(r'python', views.PythonViewSet)
 router.register(r'javascript', views.JavaScriptViewSet)
 router.register(r'html', views.HTMLViewSet)
+router.register(r'git', views.GITViewSet)
 
 urlpatterns = [
     url(r'^$', index, name='index'),

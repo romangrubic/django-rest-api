@@ -1,4 +1,4 @@
-from .models import Python, JavaScript, HTML
+from .models import Python, JavaScript, HTML, GIT
 from rest_framework import serializers
 
 
@@ -19,5 +19,12 @@ class JavaScriptSerializer(serializers.HyperlinkedModelSerializer):
 class HTMLSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HTML
+        fields = ['id', 'url', 'question', 'answer', 'link', 'question_created']
+        read_only_Fields = ('id', 'url')
+
+
+class GITSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = GIT
         fields = ['id', 'url', 'question', 'answer', 'link', 'question_created']
         read_only_Fields = ('id', 'url')

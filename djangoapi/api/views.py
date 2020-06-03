@@ -1,6 +1,6 @@
-from .models import Python, JavaScript, HTML
+from .models import Python, JavaScript, HTML, GIT
 from rest_framework import viewsets, permissions
-from .serializers import  PythonSerializer, JavaScriptSerializer, HTMLSerializer
+from .serializers import  PythonSerializer, JavaScriptSerializer, HTMLSerializer, GITSerializer
 from django.shortcuts import render
 
 
@@ -29,6 +29,15 @@ class HTMLViewSet(viewsets.ModelViewSet):
     queryset = HTML.objects.all()
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = HTMLSerializer
+
+
+class GITViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows only GET for GIT
+    """
+    queryset = GIT.objects.all()
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = GITSerializer
 
 
 def index(request):
